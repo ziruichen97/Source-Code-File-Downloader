@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Source Code File Downloader",
+  "version": "1.0",
+  "description": "Downloads source code files from web pages",
+  "icons": {
+    "128": "Source Code File Downloader.png"
+  },
+  "action": {
+    "default_icon": "Source Code File Downloader.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "downloads"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
