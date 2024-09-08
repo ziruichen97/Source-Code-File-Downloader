@@ -1,0 +1,1 @@
+This extension does not handle user data. It only downloads source code files from web pages.
