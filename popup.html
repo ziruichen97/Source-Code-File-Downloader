@@ -1,12 +1,80 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Source Code File Downloader</title>
-</head>
-<body>
-  <h1>Source Code File Downloader</h1>
-  <button id="grabResources">Download</button>
-  <div id="result"></div>
-  <script src="popup.js"></script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Source Code File Downloader</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        text-align: center;
+        background-color: #393636;
+        padding: 10px 10px 5px 10px;
+      }
+      h2 {
+        color: #e5e5e5;
+        margin-bottom: 20px;
+      }
+      button {
+        padding: 10px 40px;
+        font-size: 15px;
+        color: #fff;
+        background-color: #747b83;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16),
+          0 6px 20px rgba(0, 0, 0, 0.23);
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      #result {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #949292;
+      }
+
+      .popout-button {
+        position: relative;
+        z-index: 1;
+        background-color: #5e6975;
+      }
+      .popout-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.8;
+        z-index: -1;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" role="main">
+      <!-- <p>Source Code File Downloader</p> -->
+      <button
+        id="grabResources"
+        aria-label="Download resources"
+        class="popout-button"
+      >
+        Download Source Code
+      </button>
+      <div id="result"></div>
+      <div class="popout-background"></div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
 </html>
